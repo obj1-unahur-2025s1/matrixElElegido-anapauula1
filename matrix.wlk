@@ -30,3 +30,31 @@ object trinity{
     method saltar() { } // metodo vacio
     // porque no le afecta en nada saltar 
 }
+object nave{
+    const pasajeros = [neo,morfeo,trinity] // lista vacia hacemos
+    // ¿cuantos pasajeros hay en la nave?
+    method cantidadPasajeros() = pasajeros.size()
+    // el pasajero de mayor vitalidad
+    method mayorVitalidad(){
+        // devuelve el objeto
+        return pasajeros.max{p => p.vitalidad()}
+        // max se utiliza para la mayor vitalidad
+        // p es una variable nueva que se crea
+        // recorre y pregunta la vitalidad
+    }
+    method estaEquilibrado(){
+        return self.mayorVitalidad() < self.menorVitalidad() ** 2
+        // el mas grande NO debe de tener el doble 
+        // del mas chico
+    }
+    method menorVitalidad(){
+        return pasajeros.min{p => p.vitalidad()}
+    }
+    method estaElElegido(){
+       return pasajeros.any({p => p.estaElElegido()})
+       // any = metodo de listas que ya viene
+       // para ver si algun objeto cumple una condicion
+    }
+    
+
+}
