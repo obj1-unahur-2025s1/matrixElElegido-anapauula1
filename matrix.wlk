@@ -55,6 +55,16 @@ object nave{
        // any = metodo de listas que ya viene
        // para ver si algun objeto cumple una condicion
     }
-    
-
+    method choca(){
+        // este metodo es solo el "mensaje " digamos
+        // no afecta en nada pero lo pide el enunciado
+        pasajeros.forEach({p => p.salta()})
+        // es un "recorrido" porque hace saltar a todos
+        pasajeros.clear()
+    }
+    method acelera(){
+        pasajeros.filter({p => !p.esElElegido()})
+        // filter --> condicion para crear la otra "lista"
+        // los personajes no deben de ser el elegido
+    }
 }
